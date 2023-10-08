@@ -7,8 +7,8 @@ const Profile = ({name,desc,data,handleEdit,handleDelete}) => {
     <section className="w-full">
       <div className="border-b-8 border-blue-200">
       <div className="flex-row flex mb-3">
-      {data.map((post)=>(
-        <Image className="rounded-full border-4 border-gray-500" src={post.creator.image} width={100} height={100}/>  
+      {data?.map((post,index)=> index < 1 &&(
+        <Image key={post.creator.id} className="rounded-full border-4 border-gray-500" src={post.creator.image} width={100} height={100}/>  
         ))}
         <h1 className="head_text text-center"><span className="blue_gradient text-transform capitalize">{name}</span></h1>
       </div>
